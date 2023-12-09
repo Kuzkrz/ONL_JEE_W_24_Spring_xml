@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="notificationService" class="pl.coderslab.beans.sender.SmsSender"/>
+    <bean id="messageSender" class="pl.coderslab.beans.MessageSender">
+        <constructor-arg ref="notificationService"/>
+    </bean>
+
+    <bean id="helloWorld" class="pl.coderslab.beans.HelloWorld">
+        <constructor-arg name="message" value="Pozdrawiam z springa"/>
+    </bean>
+</beans>
